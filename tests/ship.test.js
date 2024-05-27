@@ -9,3 +9,7 @@ test("initial ship creation", () => {
 test("hit", () => {
     expect(DUMMY_SHIP.hit()).toBe(1)
 })
+
+test("sunk", () => {
+    expect(DUMMY_SHIP.isSunk()).toBeTruthy()
+})
