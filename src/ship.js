@@ -7,7 +7,7 @@ export default class Ship {
     }
 
     hit() {
-        return this.timesBeenHit + 1
+        return this.timesBeenHit += 1
     }
 
     isSunk() {
