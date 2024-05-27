@@ -10,7 +10,8 @@ class Ship {
     }
 
     isSunk() {
-        return null
+        if (this.length === this.timesBeenHit) this.sunkStatus = true
+        return this.sunkStatus
     }
 
 }
