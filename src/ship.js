@@ -1,5 +1,6 @@
 export default class Ship {
-    constructor(length = null) {
+    // default length of 1
+    constructor(length = 1) {
         this.length = length
         this.timesBeenHit = 0
         this.sunkStatus = false
