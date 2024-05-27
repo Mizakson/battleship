@@ -6,7 +6,7 @@ class Ship {
     }
 
     hit() {
-        return null
+        return this.timesBeenHit + 1
     }
 
     isSunk() {
