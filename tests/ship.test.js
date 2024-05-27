@@ -1,6 +1,7 @@
 import Ship from "../src/ship"
 
+const DUMMY_SHIP = new Ship()
+
 test("initial ship creation", () => {
-    const ship = new Ship()
-    expect(ship).toBe(ship)
+    expect(DUMMY_SHIP).toBe(DUMMY_SHIP)
 })
