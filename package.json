@@ -1,0 +1,11 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "Odin Project JavaScript Course Final Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Mizakson",
+  "license": "ISC"
+}
