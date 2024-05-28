@@ -38,4 +38,23 @@ export default class Gameboard {
         return arr
     }
 
+    place(ship, coord, direction) {
+
+        if (direction !== "vertical" && direction !== "horizontal") return "invalid direction"
+
+        let x = coord[0]
+        let y = coord[1]
+
+        for (let i = 0; i < ship.length; i++) {
+            if (direction === "vertical") {
+                this.coords[x][y += i] = 1
+            }
+            if (direction === "horizontal") {
+                this.coords[x += i][y] = 1
+            }
+        }
+
+        return this.coords
+    }
+
 }
