@@ -4,6 +4,7 @@ export default class Ship {
         this.length = length
         this.timesBeenHit = 0
         this.sunkStatus = false
+        this.placedCoords = []
     }
 
     hit() {

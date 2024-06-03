@@ -31,7 +31,7 @@ describe("place method", () => {
     
 })
 
-describe.only("recieve attack", () => {
+describe("recieve attack", () => {
 
     let chosenShip = DUMMY.fleet[1]
 

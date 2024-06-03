@@ -39,57 +39,16 @@ export default class Gameboard {
     }
 
     place(ship, coord, direction) {
-
+        
         if (direction !== "vertical" && direction !== "horizontal") return "invalid direction"
         
         let x = coord[0]
         let y = coord[1]
 
-        if (x > 9 || y > 9) return "out of bounds"
+        if (x > 9 || y > 9 || (x > 9 && y > 9)) return "out of bounds"
 
-        if (x < 9 && y < 9) {
-            let placedCoords = []
-            // start
-            this.coords[x][y] = 1
+        return ship.placedCoords
 
-            for (let i = 0; i < this.fleet.length; i++) {
-                if (ship.length === this.fleet[i].length) {
-                    
-                    placedCoords.push(coord)
-
-                    this.fleet[i]["placedCoords"] = placedCoords
-                }
-            }
-
-            for (let i = 0; i < ship.length - 1; i++) {
-                if (direction === "vertical") {
-                    this.coords[x][y++] = 1
-                    placedCoords.push([x, y])
-                }
-                if (direction === "horizontal") {
-                    this.coords[x++][y] = 1
-                    placedCoords.push([x, y])
-                }
-            }
-
-            for (let i = 0; i < placedCoords.length; i++) {
-                if (placedCoords[i] > this.coords.length) {
-                    placedCoords = []
-                    return "out of bounds"
-                } 
-                for (let j = 0; j < placedCoords.length; j++) {
-                    if (placedCoords[i][j] > this.coords.length) {
-                        placedCoords = []
-                        return "out of bounds"
-                    }
-                }
-            }
-            return placedCoords
-
-        }
-        
-
-
-    }
+    }    
 
 }
