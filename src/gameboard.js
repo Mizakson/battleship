@@ -4,6 +4,7 @@ export default class Gameboard {
     constructor() {
         this.coords = this.initializeGrid()
         this.fleet = this.initializeFleet()
+        this.missedShots = []
     }
 
     initializeGrid() {
@@ -98,6 +99,8 @@ export default class Gameboard {
                 }
             }
         }
+
+        this.missedShots.push(coord)
 
         return "miss"
     }
