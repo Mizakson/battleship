@@ -42,19 +42,28 @@ export default class Gameboard {
 
         if (direction !== "vertical" && direction !== "horizontal") return "invalid direction"
 
+        let placedCoords = []
+
         let x = coord[0]
         let y = coord[1]
 
         for (let i = 0; i < ship.length; i++) {
             if (direction === "vertical") {
                 this.coords[x][y += i] = 1
+                placedCoords.push([x, y])
             }
             if (direction === "horizontal") {
                 this.coords[x += i][y] = 1
+                placedCoords.push([x, y])
             }
         }
 
-        return this.coords
+        for (let i = 0; i < this.fleet.length; i++) {
+            if (ship.length === this.fleet[i].length) {
+                this.fleet[i]["placedCoords"] = placedCoords
+            }
+        }
+
     }
 
 }
