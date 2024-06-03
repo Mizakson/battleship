@@ -15,7 +15,7 @@ export default class Gameboard {
         for (let i = 0; i < x; i++) {
             grid[i] = []
             for (let j = 0; j < y; j++) {
-                grid[i][j] = 0
+                grid[i][j] = "empty"
             }
         }
 
@@ -45,7 +45,37 @@ export default class Gameboard {
         let x = coord[0]
         let y = coord[1]
 
-        if (x > 9 || y > 9 || (x > 9 && y > 9)) return "out of bounds"
+        if (x > 9 || y > 9 || (x > 9 && y > 9) || x < 0 || y < 0 || (x < 0 && y < 0)) {
+            ship.placedCoords = []
+            return "out of bounds"
+        }
+
+        this.coords[x][y] = "placed"
+
+        for (let i = 0; i < (ship.length); i++) {
+            
+            if (direction === "horizontal") {
+                let newCoord = [x++, y]
+                if (newCoord[0] > 9) {
+                    ship.placedCoords = []
+                    return "out of bounds"
+                } else if (newCoord[0] < 9) {
+                    this.coords[newCoord[0]][newCoord[1]] = "placed"
+                    ship.placedCoords.push(newCoord)
+                }
+            }
+
+            if (direction === "vertical") {
+                let newCoord = [x, y++]
+                if (newCoord[1] > 9) {
+                    ship.placedCoords = []
+                    return "out of bounds"
+                } else if (newCoord[1] < 9) {
+                    this.coords[newCoord[0]][newCoord[1]] = "placed"
+                    ship.placedCoords.push(newCoord)
+                }
+            }
+        }
 
         return ship.placedCoords
 

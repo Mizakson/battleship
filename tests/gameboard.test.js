@@ -19,14 +19,14 @@ describe("place method", () => {
 
     test("horizontal place coords", () => {
         DUMMY.place(s1, [1, 2], "horizontal")
-        expect(DUMMY.coords[1][2]).toBe(1)
-        expect(DUMMY.coords[2][2]).toBe(1)
+        expect(DUMMY.coords[1][2]).toBe("placed")
+        expect(DUMMY.coords[2][2]).toBe("placed")
     })
 
     test("vertical place coords", () => {
         DUMMY.place(s1, [1, 2], "vertical")
-        expect(DUMMY.coords[1][2]).toBe(1)
-        expect(DUMMY.coords[1][3]).toBe(1)
+        expect(DUMMY.coords[1][2]).toBe("placed")
+        expect(DUMMY.coords[1][3]).toBe("placed")
     })
     
 })
@@ -42,11 +42,17 @@ describe("recieve attack", () => {
         ])
     })
     
-    test.only("intial boundary check", () => {
+    test("intial boundary check", () => {
         let otherShip = DUMMY.fleet[2]
+        expect(DUMMY.place(otherShip, [10, 9], "horizontal")).toBe("out of bounds")
+        expect(DUMMY.place(otherShip, [9, 10], "horizontal")).toBe("out of bounds")
+        expect(DUMMY.place(otherShip, [10, 10], "horizontal")).toBe("out of bounds")
+        expect(DUMMY.place(otherShip, [9, 9], "horizontal")).toBe("out of bounds")
+
         expect(DUMMY.place(otherShip, [10, 9], "vertical")).toBe("out of bounds")
         expect(DUMMY.place(otherShip, [9, 10], "vertical")).toBe("out of bounds")
         expect(DUMMY.place(otherShip, [10, 10], "vertical")).toBe("out of bounds")
+        expect(DUMMY.place(otherShip, [9, 9], "vertical")).toBe("out of bounds")
     })
 
 })
