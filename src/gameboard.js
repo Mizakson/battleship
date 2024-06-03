@@ -43,33 +43,53 @@ export default class Gameboard {
         if (direction !== "vertical" && direction !== "horizontal") return "invalid direction"
 
         let placedCoords = []
-
         let x = coord[0]
         let y = coord[1]
-        // start
-        this.coords[x][y] = 1
 
-        for (let i = 0; i < this.fleet.length; i++) {
-            if (ship.length === this.fleet[i].length) {
-                
-                placedCoords.push(coord)
+        if (x > 9 || y > 9) return "out of bounds"
 
-                this.fleet[i]["placedCoords"] = placedCoords
+        if (x < 9 || y < 9) {
+            // start
+            this.coords[x][y] = 1
+
+            for (let i = 0; i < this.fleet.length; i++) {
+                if (ship.length === this.fleet[i].length) {
+                    
+                    placedCoords.push(coord)
+
+                    this.fleet[i]["placedCoords"] = placedCoords
+                }
             }
+
+            for (let i = 0; i < ship.length - 1; i++) {
+                if (direction === "vertical") {
+                    this.coords[x][y++] = 1
+                    placedCoords.push([x, y])
+                }
+                if (direction === "horizontal") {
+                    this.coords[x++][y] = 1
+                    placedCoords.push([x, y])
+                }
+            }
+
+            for (let i = 0; i < placedCoords.length; i++) {
+                if (placedCoords[i] > this.coords.length) {
+                    placedCoords = []
+                    return "out of bounds"
+                } 
+                for (let j = 0; j < placedCoords.length; j++) {
+                    if (placedCoords[i][j] > this.coords.length) {
+                        placedCoords = []
+                        return "out of bounds"
+                    }
+                }
+            }
+
+            return placedCoords
+
         }
+        
 
-        for (let i = 0; i < ship.length - 1; i++) {
-            if (direction === "vertical") {
-                this.coords[x][y++] = 1
-                placedCoords.push([x, y])
-            }
-            if (direction === "horizontal") {
-                this.coords[x++][y] = 1
-                placedCoords.push([x, y])
-            }
-        }
-
-        return placedCoords
 
     }
 
