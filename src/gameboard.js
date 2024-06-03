@@ -41,14 +41,14 @@ export default class Gameboard {
     place(ship, coord, direction) {
 
         if (direction !== "vertical" && direction !== "horizontal") return "invalid direction"
-
-        let placedCoords = []
+        
         let x = coord[0]
         let y = coord[1]
 
         if (x > 9 || y > 9) return "out of bounds"
 
-        if (x < 9 || y < 9) {
+        if (x < 9 && y < 9) {
+            let placedCoords = []
             // start
             this.coords[x][y] = 1
 
@@ -84,7 +84,6 @@ export default class Gameboard {
                     }
                 }
             }
-
             return placedCoords
 
         }
