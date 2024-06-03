@@ -30,3 +30,17 @@ describe("place method", () => {
     })
     
 })
+
+describe.only("recieve attack", () => {
+
+    let chosenShip = DUMMY.fleet[1]
+
+    test("placed coords", () => {
+        DUMMY.place(chosenShip, [4, 4], "horizontal")
+        expect(chosenShip.placedCoords).toStrictEqual([
+            [4, 4], [5, 4], [6, 4]
+        ])
+    })
+    
+
+})

@@ -46,23 +46,30 @@ export default class Gameboard {
 
         let x = coord[0]
         let y = coord[1]
-
-        for (let i = 0; i < ship.length; i++) {
-            if (direction === "vertical") {
-                this.coords[x][y += i] = 1
-                placedCoords.push([x, y])
-            }
-            if (direction === "horizontal") {
-                this.coords[x += i][y] = 1
-                placedCoords.push([x, y])
-            }
-        }
+        // start
+        this.coords[x][y] = 1
 
         for (let i = 0; i < this.fleet.length; i++) {
             if (ship.length === this.fleet[i].length) {
+                
+                placedCoords.push(coord)
+
                 this.fleet[i]["placedCoords"] = placedCoords
             }
         }
+
+        for (let i = 0; i < ship.length - 1; i++) {
+            if (direction === "vertical") {
+                this.coords[x][y++] = 1
+                placedCoords.push([x, y])
+            }
+            if (direction === "horizontal") {
+                this.coords[x++][y] = 1
+                placedCoords.push([x, y])
+            }
+        }
+
+        return placedCoords
 
     }
 
