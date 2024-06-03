@@ -81,4 +81,25 @@ export default class Gameboard {
 
     }    
 
+    recieveAttack(coord) {
+        
+        let x = coord[0]
+        let y = coord[1]
+
+        if (x < 0 || y < 0 || (x < 0 && y < 0) || x > 9 || y > 9 || (x > 9 && y > 9)) return "out of bounds"
+        
+        for (let i = 0; i < this.fleet.length; i++) {
+            for (let j = 0; j < this.fleet[i].placedCoords.length; j++) {
+                if (this.fleet[i].placedCoords[j][0] === x && 
+                    this.fleet[i].placedCoords[j][1] === y
+                ) {
+                    this.fleet[i].hit()
+                    return "hit"
+                }
+            }
+        }
+
+        return "miss"
+    }
+
 }
