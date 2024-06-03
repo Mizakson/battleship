@@ -42,7 +42,7 @@ describe("recieve attack", () => {
         ])
     })
     
-    test("boundary check", () => {
+    test.only("intial boundary check", () => {
         let otherShip = DUMMY.fleet[2]
         expect(DUMMY.place(otherShip, [10, 9], "vertical")).toBe("out of bounds")
         expect(DUMMY.place(otherShip, [9, 10], "vertical")).toBe("out of bounds")
