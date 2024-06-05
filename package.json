@@ -4,7 +4,8 @@
   "description": "Odin Project JavaScript Course Final Project",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack"
   },
   "author": "Mizakson",
   "license": "ISC",
