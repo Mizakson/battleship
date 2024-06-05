@@ -9,11 +9,17 @@ module.exports = {
         clean: true,
     },
     devtool: "inline-source-map",
+    devServer: {
+        static: "./dist",
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: "Battleship",
         }),
     ],
+    optimization: {
+        runtimeChunk: "single",
+    },
     module: {
         rules: [
             {
