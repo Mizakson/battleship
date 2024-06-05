@@ -55,12 +55,16 @@ describe("recieve attack", () => {
         expect(DUMMY.place(otherShip, [9, 9], "vertical")).toBe("out of bounds")
     })
 
-    test.only("hit check", () => {
+    test("hit check", () => {
         DUMMY.place(DUMMY.fleet[0], [1, 2], "vertical")
         expect(DUMMY.recieveAttack([1, 2])).toBe("hit") 
         expect(DUMMY.recieveAttack([4, 8])).toBe("miss")
         expect(DUMMY.fleet[0].timesBeenHit).toBe(1)
         expect(DUMMY.missedShots[0]).toStrictEqual([4, 8])
     }) 
+
+})
+
+describe.only("all sunk", () => {
 
 })

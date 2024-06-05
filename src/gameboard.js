@@ -105,4 +105,8 @@ export default class Gameboard {
         return "miss"
     }
 
+    allSunk() {
+        
+    }
+
 }
