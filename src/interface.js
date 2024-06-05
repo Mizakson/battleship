@@ -1,5 +1,7 @@
 const uiMethods = ( function () {
     
+    const body = document.querySelector("body")
+
     const createContainer = (cls, idName) => {
         let el = document.createElement("div")
 
@@ -21,7 +23,16 @@ const uiMethods = ( function () {
 
     }
 
-    return { createContainer, createEl }
+    const createMainHeader = () => {
+        const container = createContainer("header-container", "")
+        const titleText = createEl("h1", "title-text", "", "Battleship")
+
+        container.appendChild(titleText)
+        body.appendChild(container)
+
+    }
+
+    return { createContainer, createEl, createMainHeader }
 
 })()
 
