@@ -1,4 +1,4 @@
-export const uiMethods = ( function () {
+const uiMethods = ( function () {
     
     const createContainer = (cls, idName) => {
         let el = document.createElement("div")
@@ -24,3 +24,5 @@ export const uiMethods = ( function () {
     return { createContainer, createEl }
 
 })()
+
+export default uiMethods
