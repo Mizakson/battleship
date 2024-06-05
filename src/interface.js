@@ -32,7 +32,16 @@ const uiMethods = ( function () {
 
     }
 
-    return { createContainer, createEl, createMainHeader }
+    const formatMainDisplay = () => {
+        body.style.display = "flex"
+        body.style.flexDirection = "column"
+        body.style.padding = "1%"
+    }
+
+    return { 
+        createContainer, createEl, createMainHeader,
+        formatMainDisplay,
+    }
 
 })()
 
