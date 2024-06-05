@@ -65,6 +65,12 @@ describe("recieve attack", () => {
 
 })
 
-describe.only("all sunk", () => {
+test("all sunk", () => {
+    // set sunkStatus -> true for all ships
+    for (let i = 0; i < DUMMY.fleet.length; i++) {
+        DUMMY.fleet[i].sunkStatus = true
+    }
+
+    expect(DUMMY.allSunk()).toBeTruthy()
 
 })

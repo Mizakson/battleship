@@ -106,7 +106,12 @@ export default class Gameboard {
     }
 
     allSunk() {
-        
+        for (let i = 0; i < this.fleet.length; i++) {
+            let condition = this.fleet[i].sunkStatus
+            if (condition === true) return true
+        }
+
+        return false
     }
 
 }
