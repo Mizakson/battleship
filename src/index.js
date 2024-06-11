@@ -5,5 +5,4 @@ import Player from "../src/player"
 import uiMethods from "../src/interface"
 import "../src/css/styles.css"
 
-uiMethods.formatMainDisplay()
 uiMethods.createMainHeader()
