@@ -1,3 +1,5 @@
+import domMethods from "./dom-events"
+
 const uiMethods = ( function () {
     
     const body = document.querySelector("body")
@@ -40,10 +42,10 @@ const uiMethods = ( function () {
         const projectCreditsContainer = createContainer("project-credits-container", "")
 
         projectNumberContainer.innerHTML += 
-        "<h3 class='project-description-text' id='project-number-text'> <a href='https://www.theodinproject.com/' title='https://www.theodinproject.com/'>Odin Project</a> JavaScript Course Final Project</h3>"
+        "<h3 class='project-description-text' id='project-number-text'> <a href='https://www.theodinproject.com/' onclick='openLinkInNewTab('https://www.theodinproject.com')' title='https://www.theodinproject.com'>Odin Project</a> JavaScript Course Final Project</h3>"
 
         projectCreditsContainer.innerHTML += 
-        "<h4 class='project-description-text' id='project-credits-text'>A program by <a href='https://github.com/Mizakson' title='https://github.com/Mizakson'>Mizakson</a></h4>"
+        "<h4 class='project-description-text' id='project-credits-text'>A program by <a href='https://github.com/Mizakson' onclick='openLinkInNewTab('https://github.com/Mizakson')' title='https://github.com/Mizakson'>Mizakson</a></h4>"
 
         descriptionContainer.appendChild(projectNumberContainer)
         descriptionContainer.appendChild(projectCreditsContainer)
