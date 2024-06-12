@@ -2,16 +2,11 @@ import Ship from "../src/ship"
 import Gameboard from "../src/gameboard"
 import Player from "../src/player"
 
-const domMethods = ( function() {
+const domMethods = {
+    "openLinkInNewTab": (url) => {
+        window.open(url, '_blank')
+    },
 
-    // TODO: create openLinkInNewTab onclick event
-    const openLinkInNewTab = (url) => {
-        var win = window.open(url, '_blank');
-        win.focus();
-    }
-
-    return { openLinkInNewTab }
-
-})()
+}
 
 export default domMethods

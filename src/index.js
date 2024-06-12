@@ -1,9 +1,9 @@
 import Ship from "../src/ship"
 import Gameboard from "../src/gameboard"
 import Player from "../src/player"
-// dom-events input statement here
+import domMethods from "../src/dom-events"
 import uiMethods from "../src/interface"
-import "../src/css/styles.css"
+import "../src/css/styles.css" 
 
 const app = (function() {
     uiMethods.mainHeader()
