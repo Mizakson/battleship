@@ -58,6 +58,23 @@ const uiMethods = {
         uiMethods.createDescription()
     },
 
+    "createContent": function() {
+        const contentContainer = uiMethods.createContainer("content-container", "")
+        uiMethods.body.appendChild(contentContainer)
+    },
+
+    "createBoards": function() {
+        const playerBoard = uiMethods.createEl("div", "player-board", "", "PLAYER BOARD HERE")
+        const cpuBoard = uiMethods.createEl("div", "cpu-board", "", "CPU BOARD HERE")
+        document.querySelector(".content-container").appendChild(playerBoard)
+        document.querySelector(".content-container").appendChild(cpuBoard)
+    },
+
+    "mainContent": function() {
+        uiMethods.createContent()
+        uiMethods.createBoards()
+    },
+
 }
     
 export default uiMethods

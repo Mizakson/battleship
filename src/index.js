@@ -7,4 +7,5 @@ import "../src/css/styles.css"
 
 const app = (function() {
     uiMethods.mainHeader()
+    uiMethods.mainContent()
 })()
