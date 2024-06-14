@@ -29,42 +29,27 @@ a:hover {
 }
 
 .content-container {
-    border: medium dashed black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    height: 60%;
-    gap: 25%;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    grid-gap: 10%;
+    width: 60%;
+    border: medium dotted black;
     padding: 2%;
-    align-items: center;
 }
 
 .board-names-container {
-    width: 50%;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    gap: 75%;
-    align-items: center;
+    grid-row: 1 / 2;
 }
 
 .boards-container {
-    border: medium dashed black;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 40%;
-    gap: 55%;
-    padding: 5%;
+    grid-row: 2 / 3;
 }
 
-.player-board, .cpu-board {
-    text-align: center;
-    border: medium dashed red;
-    padding: 2%;
-    width: 50%;
-    height: 80%;
+.board-names-container, .boards-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
 }

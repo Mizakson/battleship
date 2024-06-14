@@ -65,8 +65,8 @@ const uiMethods = {
 
     "createBoards": function() {
         const boardsContainer = uiMethods.createContainer("boards-container", "")
-        const playerBoard = uiMethods.createEl("div", "player-board", "", "PLAYER BOARD HERE")
-        const cpuBoard = uiMethods.createEl("div", "cpu-board", "", "CPU BOARD HERE")
+        const playerBoard = uiMethods.createEl("div", "player-board-container", "", "PLAYER BOARD HERE")
+        const cpuBoard = uiMethods.createEl("div", "cpu-board-container", "", "CPU BOARD HERE")
 
         boardsContainer.appendChild(playerBoard)
         boardsContainer.appendChild(cpuBoard)
