@@ -27,7 +27,7 @@ const uiMethods = {
     "createTitle": function() {
         const container = uiMethods.createContainer("header-container", "")
         const titleContainer = uiMethods.createContainer("title-container", "")
-        const titleText = uiMethods.createEl("h1", "title-text", "", "Battleship")
+        const titleText = uiMethods.createEl("h2", "title-text", "", "Battleship")
 
         titleContainer.appendChild(titleText)
         container.appendChild(titleContainer)
@@ -41,7 +41,7 @@ const uiMethods = {
         const projectCreditsContainer = uiMethods.createContainer("project-credits-container", "")
 
         projectNumberContainer.innerHTML += 
-        "<h3 class='project-description-text' id='project-number-text'> <a href='https://www.theodinproject.com' id='odin-project-url'>Odin Project</a> JavaScript Course Final Project</h3>"
+        "<h4 class='project-description-text' id='project-number-text'> <a href='https://www.theodinproject.com' id='odin-project-url'>Odin Project</a> JavaScript Course Final Project</h3>"
 
         projectCreditsContainer.innerHTML += 
         "<h4 class='project-description-text' id='project-credits-text'>A program by <a href='https://github.com/Mizakson' id='github-url' title='https://github.com/Mizakson'>Mizakson</a></h4>"
