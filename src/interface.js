@@ -64,14 +64,30 @@ const uiMethods = {
     },
 
     "createBoards": function() {
+        const boardsContainer = uiMethods.createContainer("boards-container", "")
         const playerBoard = uiMethods.createEl("div", "player-board", "", "PLAYER BOARD HERE")
         const cpuBoard = uiMethods.createEl("div", "cpu-board", "", "CPU BOARD HERE")
-        document.querySelector(".content-container").appendChild(playerBoard)
-        document.querySelector(".content-container").appendChild(cpuBoard)
+
+        boardsContainer.appendChild(playerBoard)
+        boardsContainer.appendChild(cpuBoard)
+
+        document.querySelector(".content-container").appendChild(boardsContainer) 
+    },
+        
+
+    "contentDescription": function() {
+        const boardNames = uiMethods.createContainer("board-names-container", "")
+        const playerName = uiMethods.createEl("h3", "board-description", "player-board-title-text", "You")
+        const cpuName = uiMethods.createEl("h3", "board-description", "cpu-board-title-text", "CPU")
+        boardNames.appendChild(playerName)
+        boardNames.appendChild(cpuName)
+        document.querySelector(".content-container").appendChild(boardNames)
+
     },
 
     "mainContent": function() {
         uiMethods.createContent()
+        uiMethods.contentDescription()
         uiMethods.createBoards()
     },
 

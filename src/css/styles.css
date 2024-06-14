@@ -25,17 +25,39 @@ a:hover {
     justify-content: center;
     text-align: center;
     padding: 1%;
-    padding-bottom: 3%;
+    padding-bottom: 2%;
 }
 
 .content-container {
     border: medium dashed black;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     width: 50%;
-    height: 40%;
+    height: 60%;
     gap: 25%;
+    padding: 2%;
+    align-items: center;
+}
+
+.board-names-container {
+    width: 50%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    gap: 75%;
+    align-items: center;
+}
+
+.boards-container {
+    border: medium dashed black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 40%;
+    gap: 55%;
     padding: 5%;
 }
 
@@ -43,4 +65,6 @@ a:hover {
     text-align: center;
     border: medium dashed red;
     padding: 2%;
+    width: 50%;
+    height: 80%;
 }
