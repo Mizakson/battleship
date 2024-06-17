@@ -63,18 +63,6 @@ const uiMethods = {
         uiMethods.body.appendChild(contentContainer)
     },
 
-    "createBoards": function() {
-        const boardsContainer = uiMethods.createContainer("boards-container", "")
-        const playerBoard = uiMethods.createEl("div", "player-board-container", "", "PLAYER BOARD HERE")
-        const cpuBoard = uiMethods.createEl("div", "cpu-board-container", "", "CPU BOARD HERE")
-
-        boardsContainer.appendChild(playerBoard)
-        boardsContainer.appendChild(cpuBoard)
-
-        document.querySelector(".content-container").appendChild(boardsContainer) 
-    },
-        
-
     "contentDescription": function() {
         const boardNames = uiMethods.createContainer("board-names-container", "")
         const playerName = uiMethods.createEl("h3", "board-description", "player-board-title-text", "You")
@@ -85,12 +73,38 @@ const uiMethods = {
 
     },
 
+    "createBoards": function() {
+        const boardsContainer = uiMethods.createContainer("boards-container", "")
+        const playerBoard = uiMethods.createEl("div", "player-board-container", "", "PLAYER BOARD HERE")
+        const cpuBoard = uiMethods.createEl("div", "cpu-board-container", "", "CPU BOARD HERE")
+
+        boardsContainer.appendChild(playerBoard)
+        boardsContainer.appendChild(cpuBoard)
+
+        document.querySelector(".content-container").appendChild(boardsContainer) 
+    },
+
     "mainContent": function() {
         uiMethods.createContent()
         uiMethods.contentDescription()
         uiMethods.createBoards()
     },
 
+    // TODO: createGrids -- player and cpu 10x10 grids
+    "createGrids": function() {
+
+        const width = 9
+        const height = 9
+
+        for (let i = 0; i < width; i++) {
+            for (let j = 0; j < height; j++) {
+                document.querySelector(".player-board-container").appendChild(uiMethods.createEl("div", "cell", `${i},${j}`, ""))
+                document.querySelector(".cpu-board-container").appendChild(uiMethods.createEl("div", "cell", `${i},${j}`, ""))
+            }
+        }        
+    },
+
+    
 }
     
 export default uiMethods
