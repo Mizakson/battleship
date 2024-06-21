@@ -92,16 +92,21 @@ const uiMethods = {
 
     // TODO: createGrids -- player and cpu 10x10 grids
     "createGrids": function() {
-
         const width = 9
         const height = 9
 
+        const playerBoard = uiMethods.createContainer("player-board", "")
+        const cpuBoard = uiMethods.createContainer("cpu-board","")
+
         for (let i = 0; i < width; i++) {
             for (let j = 0; j < height; j++) {
-                document.querySelector(".player-board-container").appendChild(uiMethods.createEl("div", "cell", `${i},${j}`, ""))
-                document.querySelector(".cpu-board-container").appendChild(uiMethods.createEl("div", "cell", `${i},${j}`, ""))
+                playerBoard.appendChild(uiMethods.createEl("div", "cell", `${i},${j}`, ""))
+                cpuBoard.appendChild(uiMethods.createEl("div", "cell", `${i},${j}`, ""))
             }
-        }        
+        }
+        
+        document.querySelector(".player-board-container").appendChild(playerBoard)
+        document.querySelector(".cpu-board-container").appendChild(cpuBoard)
     },
 
     
