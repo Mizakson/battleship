@@ -92,8 +92,8 @@ const uiMethods = {
 
     // TODO: createGrids -- player and cpu 10x10 grids
     "createGrids": function() {
-        const width = 9
-        const height = 9
+        const width = 10
+        const height = 10
 
         const playerBoard = uiMethods.createContainer("player-board", "")
         const cpuBoard = uiMethods.createContainer("cpu-board","")
