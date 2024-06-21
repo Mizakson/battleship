@@ -6,9 +6,18 @@ import uiMethods from "../src/interface"
 import "../src/css/styles.css" 
 
 // Keep header and main containers constantly on the page
-const headerAndContentSections = (function() {
+function skeleton() {
     uiMethods.mainHeader()
     uiMethods.mainContent()
-})()
+    console.log("MAIN PAGE LOADED...")
+}
+skeleton()
 
-uiMethods.createGrids()
+// load grids only if skelelton called
+function basicGridRender() {
+    if (skeleton) {
+        uiMethods.createGrids()
+        console.log("BASIC GRIDS LOADED...")
+    }   
+}
+basicGridRender()
