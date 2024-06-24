@@ -75,8 +75,8 @@ const uiMethods = {
 
     "createBoards": function() {
         const boardsContainer = uiMethods.createContainer("boards-container", "")
-        const playerBoard = uiMethods.createEl("div", "player-board-container", "", "PLAYER BOARD HERE")
-        const cpuBoard = uiMethods.createEl("div", "cpu-board-container", "", "CPU BOARD HERE")
+        const playerBoard = uiMethods.createEl("div", "player-board-container", "", "")
+        const cpuBoard = uiMethods.createEl("div", "cpu-board-container", "", "")
 
         boardsContainer.appendChild(playerBoard)
         boardsContainer.appendChild(cpuBoard)
@@ -91,6 +91,7 @@ const uiMethods = {
     },
 
     // TODO: createGrids -- player and cpu 10x10 grids
+    // *** 10 containers for each row, 10 cells per container
     "createGrids": function() {
         const width = 10
         const height = 10
