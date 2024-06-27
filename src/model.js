@@ -23,7 +23,7 @@ export default class MainGame {
         h.board.place(h.board.fleet[2],[5, 5], "horizontal")
         h.board.place(h.board.fleet[3],[9, 4], "horizontal")
 
-        console.log(h)
+        console.log(h.board)
         console.log(h.board.fleet)
     }
 
