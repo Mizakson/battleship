@@ -55,7 +55,7 @@ export default class Gameboard {
 
         for (let i = 0; i < (ship.length); i++) {
             
-            if (direction === "horizontal") {
+            if (direction === "vertical") {
                 let newCoord = [x++, y]
                 if (newCoord[0] > 9) {
                     ship.placedCoords = []
@@ -66,7 +66,7 @@ export default class Gameboard {
                 }
             }
 
-            if (direction === "vertical") {
+            if (direction === "horizontal") {
                 let newCoord = [x, y++]
                 if (newCoord[1] > 9) {
                     ship.placedCoords = []

@@ -3,6 +3,7 @@ import Gameboard from "../src/gameboard"
 import Player from "../src/player"
 import domMethods from "../src/dom-events"
 import uiMethods from "../src/interface"
+import MainGame from "../src/model"
 import "../src/css/styles.css" 
 
 // bool -- if true app loads
@@ -28,6 +29,9 @@ function basicGridRender() {
 function init() {
     if (skeleton) {
         basicGridRender()
+        const game = new MainGame()
+        // console.log(game.human)
+        // console.log(game.cpu)
     }
 }
 
