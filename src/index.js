@@ -8,10 +8,19 @@ import "../src/css/styles.css"
 // ui excluding grid rendering
 const UI_STATE = true
 
-const baseInterface = (function() {
+function baseInterface() {
     if (UI_STATE) {
-        uiMethods.skeleton()
-        uiMethods.boardContainers()
+        uiMethods.skeleton() 
     }
     if (!UI_STATE) return false
-})()
+}
+baseInterface()
+
+
+function init() {
+    if (baseInterface) {
+        uiMethods.boardContainers()
+    }
+}
+
+init()

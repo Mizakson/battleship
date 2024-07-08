@@ -28,11 +28,11 @@ a:hover {
 }
 
 .content {
-    border: medium solid black;
     width: 65vw;
     height: 40vh;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     padding: 2%;
 }
 
