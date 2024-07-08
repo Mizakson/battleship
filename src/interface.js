@@ -61,7 +61,15 @@ const uiMethods = {
         uiMethods.projectDesc()
         uiMethods.projectCredit()
         uiMethods.contentContainer()
-    }
+    },
+
+    "boardContainers": function() {
+        const humanPlayer = uiMethods.createContainer("human")
+        const cpuPlayer = uiMethods.createContainer("cpu")
+
+        document.querySelector(".content").appendChild(humanPlayer)
+        document.querySelector(".content").appendChild(cpuPlayer)
+    },
     
 }
     

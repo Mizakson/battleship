@@ -29,6 +29,15 @@ a:hover {
 
 .content {
     border: medium solid black;
-    width: 65%;
-    height: 45%;
+    width: 65vw;
+    height: 40vh;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2%;
+}
+
+.human, .cpu {
+    border: medium dotted black;
+    width: 35%;
+    height: 105%;
 }

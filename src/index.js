@@ -11,6 +11,7 @@ const UI_STATE = true
 const baseInterface = (function() {
     if (UI_STATE) {
         uiMethods.skeleton()
+        uiMethods.boardContainers()
     }
     if (!UI_STATE) return false
 })()
