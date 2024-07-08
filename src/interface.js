@@ -55,12 +55,25 @@ const uiMethods = {
         uiMethods.body.appendChild(content)
     },
 
-    // wrapper function for title, proj description
+    "footer": function() {
+        const footer = uiMethods.createContainer("footer", "")
+        const resetBtn = uiMethods.createEl("button", "reset", "", "Reset")
+        const gameStateMessage = uiMethods.createEl("p", "game-status", "", "status message here")
+        // confirm ship placement button here?
+
+        footer.appendChild(gameStateMessage)
+        footer.appendChild(resetBtn)
+        
+        uiMethods.body.appendChild(footer)
+    },
+
+    // wrapper function for title, proj description, footer
     "skeleton": function() {
         uiMethods.mainTitle()
         uiMethods.projectDesc()
         uiMethods.projectCredit()
         uiMethods.contentContainer()
+        uiMethods.footer()
     },
 
     "boardContainers": function() {
