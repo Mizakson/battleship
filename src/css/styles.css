@@ -45,3 +45,9 @@ a:hover {
     gap: 5%;
     align-items: center;
 }
+
+#player-grid, #cpu-grid {
+    border: medium solid black;
+    width: 75%;
+    height: 75%;
+}

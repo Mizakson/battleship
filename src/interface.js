@@ -64,8 +64,8 @@ const uiMethods = {
     },
 
     "boardContainers": function() {
-        const humanPlayer = uiMethods.createContainer("human")
-        const cpuPlayer = uiMethods.createContainer("cpu")
+        const humanPlayer = uiMethods.createContainer("human", "")
+        const cpuPlayer = uiMethods.createContainer("cpu", "")
 
         document.querySelector(".content").appendChild(humanPlayer)
         document.querySelector(".content").appendChild(cpuPlayer)
@@ -75,13 +75,18 @@ const uiMethods = {
         const playerTitle = uiMethods.createEl("h3", "player-text", "", "You")
         document.querySelector(".human").appendChild(playerTitle)
 
-        const cpuTitle = uiMethods.createEl("h3", "player-text", "", "CPU")
+        const cpuTitle = uiMethods.createEl("h3", "cpu-text", "", "CPU")
         document.querySelector(".cpu").appendChild(cpuTitle)
     },
 
-    "boardRender": function() {
-        return null
-    }
+    // TODO: create empty grids
+    "gridsCreation": function() {
+        const playerGrid = uiMethods.createEl("div", "grid", "player-grid", "")
+        document.querySelector(".human").appendChild(playerGrid)
+
+        const cpuGrid = uiMethods.createEl("div", "grid", "cpu-grid", "")
+        document.querySelector(".cpu").appendChild(cpuGrid)
+    },
     
 }
     
