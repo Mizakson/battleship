@@ -70,6 +70,18 @@ const uiMethods = {
         document.querySelector(".content").appendChild(humanPlayer)
         document.querySelector(".content").appendChild(cpuPlayer)
     },
+
+    "boardTitles": function() {
+        const playerTitle = uiMethods.createEl("h3", "player-text", "", "You")
+        document.querySelector(".human").appendChild(playerTitle)
+
+        const cpuTitle = uiMethods.createEl("h3", "player-text", "", "CPU")
+        document.querySelector(".cpu").appendChild(cpuTitle)
+    },
+
+    "boardRender": function() {
+        return null
+    }
     
 }
     

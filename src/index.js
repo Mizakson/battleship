@@ -20,6 +20,7 @@ baseInterface()
 function init() {
     if (baseInterface) {
         uiMethods.boardContainers()
+        uiMethods.boardTitles()
     }
 }
 
