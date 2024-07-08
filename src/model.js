@@ -10,11 +10,13 @@ export default class MainGame {
         this.hasWinner = false
         this.human = new Player("human")
         this.cpu = new Player("cpu")
-        this.testingConfig = this.defaultCoords()
+        this.testingConfig = {
+            "human-default-coords": this.humanDefaultCoords(),
+        }
     }
 
     // TODO: set default coordinates for each player
-    defaultCoords() {
+    humanDefaultCoords() {
         const h = this.human
 
         // human player
