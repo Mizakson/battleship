@@ -17,12 +17,21 @@ function baseInterface() {
 baseInterface()
 
 
-function init() {
+function baseDescription() {
     if (baseInterface) {
         uiMethods.boardContainers()
         uiMethods.boardTitles()
-        uiMethods.gridsCreation()
+        uiMethods.gridsContainerCreation()
     }
+}
+baseDescription()
+
+
+function init() {
+    if (baseDescription) {
+        uiMethods.tenByTenGrids()
+    }
+    
 }
 
 init()

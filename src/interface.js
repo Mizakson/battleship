@@ -93,13 +93,29 @@ const uiMethods = {
     },
 
     // TODO: create empty grids
-    "gridsCreation": function() {
+    "gridsContainerCreation": function() {
         const playerGrid = uiMethods.createEl("div", "grid", "player-grid", "")
         document.querySelector(".human").appendChild(playerGrid)
 
         const cpuGrid = uiMethods.createEl("div", "grid", "cpu-grid", "")
         document.querySelector(".cpu").appendChild(cpuGrid)
     },
+
+    "tenByTenGrids": function() {
+        const playerGrid = document.querySelector("#player-grid")
+        const cpuGrid = document.querySelector("#cpu-grid")
+
+        const width = 10
+        const height = 10
+
+        for (let i = 0; i < width; i++) {
+            for (let j = 0; j < height; j++) {
+                playerGrid.appendChild(uiMethods.createEl("div", "cell", `${i},${j}`, ""))
+                cpuGrid.appendChild(uiMethods.createEl("div", "cell", `${i},${j}`, ""))
+            }
+        }
+
+    }
     
 }
     

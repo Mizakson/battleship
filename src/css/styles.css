@@ -66,3 +66,23 @@ button {
 .game-status {
     padding-bottom: 10%;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+
+.cell {
+    border: solid black;
+    width: 75%;
+    height: 75%;
+}
+
+.cell:hover {
+    background-color: blue;
+}
