@@ -3,6 +3,7 @@ import Gameboard from "../src/gameboard"
 import Player from "../src/player"
 import domMethods from "../src/dom-events"
 import uiMethods from "../src/interface"
+import MainGame from "./model"
 import "../src/css/styles.css" 
 
 // ui excluding grid rendering
@@ -26,11 +27,15 @@ function baseDescription() {
 }
 baseDescription()
 
+const TEST_MATCH = new MainGame()
+export default TEST_MATCH
 
 function init() {
     if (baseDescription) {
         uiMethods.tenByTenGrids()
     }
+
+    domMethods.renderPlayerCells()
     
 }
 

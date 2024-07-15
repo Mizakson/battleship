@@ -12,10 +12,10 @@ export default class MainGame {
         this.cpu = new Player("cpu")
         this.testingConfig = {
             "human-default-coords": this.humanDefaultCoords(),
+            "cpu-default-coords": "empty",
         }
     }
 
-    // TODO: set default coordinates for each player
     humanDefaultCoords() {
         const h = this.human
 
@@ -26,7 +26,6 @@ export default class MainGame {
         h.board.place(h.board.fleet[3],[9, 4], "horizontal")
 
         console.log(h.board)
-        console.log(h.board.fleet)
     }
 
 }
