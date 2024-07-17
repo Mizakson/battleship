@@ -8,9 +8,10 @@ import uiMethods from "../src/interface"
 export default class MainGame {
     constructor() {
         this.hasWinner = false
+        this.turn = "human"
         this.human = new Player("human")
         this.cpu = new Player("cpu")
-        this.testingConfig = {
+        this.Config = {
             "human-default-coords": this.humanDefaultCoords(),
             "cpu-default-coords": this.cpuDefaultCoords(),
         }
@@ -46,6 +47,12 @@ export default class MainGame {
 
         for (let i = 0; i < this.human.board.fleet.length; i++) {
             console.log(this.human.board.fleet[i])
+        }
+    }
+
+    swapTurn() {
+        if (this.turn === "human") {
+            setInterval(domMethods.computer.renderCpuAttack(), 1000)
         }
     }
 

@@ -33,10 +33,9 @@ export default TEST_MATCH
 function init() {
     if (baseDescription) {
         uiMethods.tenByTenGrids()
+        domMethods.gridRenderWrapper()
+        domMethods.onClickWrapper()
     }
-
-    domMethods.gridRenderWrapper()
-    domMethods.onClickWrapper()
 }
 
 init()
