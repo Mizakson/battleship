@@ -12,7 +12,7 @@ export default class MainGame {
         this.cpu = new Player("cpu")
         this.testingConfig = {
             "human-default-coords": this.humanDefaultCoords(),
-            "cpu-default-coords": "empty",
+            "cpu-default-coords": this.cpuDefaultCoords(),
         }
     }
 
@@ -25,7 +25,19 @@ export default class MainGame {
         h.board.place(h.board.fleet[2],[5, 5], "horizontal")
         h.board.place(h.board.fleet[3],[9, 4], "horizontal")
 
-        console.log(h.board)
+        // console.log(h.board)
+    }
+
+    cpuDefaultCoords() {
+        const c = this.cpu
+
+        // human player
+        c.board.place(c.board.fleet[0],[2, 2], "vertical")
+        c.board.place(c.board.fleet[1],[4, 4], "horizontal")
+        c.board.place(c.board.fleet[2],[5, 5], "horizontal")
+        c.board.place(c.board.fleet[3],[7, 4], "horizontal")
+
+        // console.log([c, c.board])
     }
 
 }
