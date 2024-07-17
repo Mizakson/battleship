@@ -2,6 +2,7 @@ import Ship from "../src/ship"
 import Gameboard from "../src/gameboard"
 import Player from "../src/player"
 import TEST_MATCH from "../src/index"
+import MainGame from "./model"
 
 const domMethods = {
 
@@ -101,21 +102,21 @@ const domMethods = {
                     document.querySelector(".game-status").innerText = `Player hit: ${[xCoord, yCoord]}`
                     cell.classList.add("hit")
                 } if (!clicked) {
+                     document.querySelector(".game-status").innerText = `Player miss: ${[xCoord, yCoord]}`
                     cell.classList.add("miss")
                 }
 
                 
-                
                 // ship tests
-                console.log(TEST_MATCH.cpu.board.fleet)
-                console.log(TEST_MATCH.cpu.board.missedShots)
-                console.log(TEST_MATCH.cpu.board.allSunk())
+                // console.log(TEST_MATCH.cpu.board.fleet)
+                // console.log(TEST_MATCH.cpu.board.missedShots)
+                // console.log(TEST_MATCH.cpu.board.allSunk())
                 domMethods.checkGameOver()
                 
                 // turn mechanism
-                // domMethods.isHumanTurn = !domMethods.isHumanTurn
+                domMethods.isHumanTurn = !domMethods.isHumanTurn
 
-                // console.log(domMethods.isHumanTurn)
+                console.log(domMethods.isHumanTurn)
 
             }
 
@@ -126,18 +127,22 @@ const domMethods = {
     "checkGameOver": function() {
         if (TEST_MATCH.cpu.board.allSunk()) {
             document.querySelector(".game-status").innerText = "GAME OVER..."
-            alert("You win! :)")
+            setTimeout(alert("You win! :)"), 1 * 500)
+            setTimeout(location.reload(), 1 * 500)
         }
         if (TEST_MATCH.human.board.allSunk()) {
             document.querySelector(".game-status").innerText = "GAME OVER..."
-            alert("You lose! :(")
+            setTimeout(alert("You lose! :("), 1 * 500)
+            setTimeout(location.reload(), 1 * 500)
         }
     },
 
     "onClickWrapper": function() {
         domMethods.playerTurnOnClick()
         domMethods.gridRenderWrapper()
-        
+        document.querySelector(".reset").onclick = function() {
+            setTimeout(location.reload(), 1 * 500)
+        }  
     }
 
         
