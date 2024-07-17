@@ -41,7 +41,36 @@ const domMethods = {
     },
 
     "renderCpuCells": function() {
-        
+        const cpuGrid = document.querySelector("#cpu-grid")
+        const width = 10
+        const height = 10
+
+        const uiCellArray = Array.from(cpuGrid.childNodes)
+        // console.log(uiCellArray)
+
+        let allPlacedCoords = []
+
+        for (let i = 0; i < TEST_MATCH.cpu.board.fleet.length; i++) {
+            let markedCells = TEST_MATCH.cpu.board.fleet[i].placedCoords
+            
+            for (let j = 0; j < markedCells.length; j++) {
+                const markedPairs = markedCells[j];
+                // console.log(markedPairs)
+                const idComparison = `${markedPairs[0]}, ${markedPairs[1]}`
+                allPlacedCoords.push(idComparison)
+                
+                // for (let k = 0; k < markedPairs.length; k++) {
+                //     console.log(markedPairs[k])
+                // }
+
+                for (let k = 0; k < uiCellArray.length; k++) {
+                    if (uiCellArray[k].id === idComparison) {
+                        // show cpu ships in render for now
+                        uiCellArray[k].classList.toggle("placed")
+                    }
+                }
+            }
+        }
     },
 
     "gridRenderWrapper": function() {
