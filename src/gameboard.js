@@ -93,13 +93,19 @@ export default class Gameboard {
             for (let j = 0; j < this.fleet[i].placedCoords.length; j++) {
                 if (this.fleet[i].placedCoords[j][0] == x && 
                     this.fleet[i].placedCoords[j][1] == y) {
-                    return this.fleet[i].hit()
+                    this.fleet[i].hit()
+                    this.fleet[i].isSunk()
+                    return true
+                    
                 }
+                
+                
             }
 
         }
 
         this.missedShots.push(coord)
+        return false
 
     }
 

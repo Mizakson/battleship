@@ -90,3 +90,11 @@ button {
 .placed {
     background-color: blue
 }
+
+.hit {
+    background-color: green;
+}
+
+.miss {
+    background-color: red;
+}

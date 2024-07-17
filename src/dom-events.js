@@ -5,6 +5,10 @@ import TEST_MATCH from "../src/index"
 
 const domMethods = {
 
+    "turnCounter": 0,
+
+    "isHumanTurn": true,
+
     // TODO: make cells from default coords turn light blue
     "renderPlayerCells": function() {
         const playerGrid = document.querySelector("#player-grid")
@@ -31,7 +35,7 @@ const domMethods = {
 
                 for (let k = 0; k < uiCellArray.length; k++) {
                     if (uiCellArray[k].id === idComparison) {
-                        uiCellArray[k].classList.toggle("placed")
+                        uiCellArray[k].classList.add("placed")
                     }
                 }
             }
@@ -66,7 +70,7 @@ const domMethods = {
                 for (let k = 0; k < uiCellArray.length; k++) {
                     if (uiCellArray[k].id === idComparison) {
                         // show cpu ships in render for now
-                        uiCellArray[k].classList.toggle("placed")
+                        // uiCellArray[k].classList.add("placed")
                     }
                 }
             }
@@ -76,6 +80,7 @@ const domMethods = {
     "gridRenderWrapper": function() {
         domMethods.renderPlayerCells()
         domMethods.renderCpuCells()
+        
     },
 
     // TODO: return cell id, check if ship is hit
@@ -90,13 +95,50 @@ const domMethods = {
                 // console.log(cell.id)
                 let xCoord = checkedArr[0]
                 let yCoord = checkedArr[1]
-                TEST_MATCH.cpu.board.recieveAttack([xCoord, yCoord])
+                let clicked = TEST_MATCH.cpu.board.recieveAttack([xCoord, yCoord])
+
+                if (clicked) {
+                    document.querySelector(".game-status").innerText = `Player hit: ${[xCoord, yCoord]}`
+                    cell.classList.add("hit")
+                } if (!clicked) {
+                    cell.classList.add("miss")
+                }
+
+                
+                
+                // ship tests
                 console.log(TEST_MATCH.cpu.board.fleet)
                 console.log(TEST_MATCH.cpu.board.missedShots)
+                console.log(TEST_MATCH.cpu.board.allSunk())
+                domMethods.checkGameOver()
+                
+                // turn mechanism
+                // domMethods.isHumanTurn = !domMethods.isHumanTurn
+
+                // console.log(domMethods.isHumanTurn)
+
             }
+
             
         })
     },
+
+    "checkGameOver": function() {
+        if (TEST_MATCH.cpu.board.allSunk()) {
+            document.querySelector(".game-status").innerText = "GAME OVER..."
+            alert("You win! :)")
+        }
+        if (TEST_MATCH.human.board.allSunk()) {
+            document.querySelector(".game-status").innerText = "GAME OVER..."
+            alert("You lose! :(")
+        }
+    },
+
+    "onClickWrapper": function() {
+        domMethods.playerTurnOnClick()
+        domMethods.gridRenderWrapper()
+        
+    }
 
         
 }

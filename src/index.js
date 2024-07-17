@@ -36,7 +36,7 @@ function init() {
     }
 
     domMethods.gridRenderWrapper()
-    domMethods.playerTurnOnClick()
+    domMethods.onClickWrapper()
 }
 
 init()

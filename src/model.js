@@ -35,9 +35,18 @@ export default class MainGame {
         c.board.place(c.board.fleet[0],[2, 2], "vertical")
         c.board.place(c.board.fleet[1],[4, 4], "horizontal")
         c.board.place(c.board.fleet[2],[5, 5], "horizontal")
-        c.board.place(c.board.fleet[3],[5, 2], "vertical")
+        c.board.place(c.board.fleet[3],[9, 2], "horizontal")
 
         // console.log([c, c.board])
+    }
+
+    checkWinner() {
+        let playerCounter = 0
+        let cpuCounter = 0
+
+        for (let i = 0; i < this.human.board.fleet.length; i++) {
+            console.log(this.human.board.fleet[i])
+        }
     }
 
 }
