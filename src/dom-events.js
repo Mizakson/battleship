@@ -22,7 +22,7 @@ const domMethods = {
             for (let j = 0; j < markedCells.length; j++) {
                 const markedPairs = markedCells[j];
                 // console.log(markedPairs)
-                const idComparison = `${markedPairs[0]}, ${markedPairs[1]}`
+                const idComparison = `${markedPairs[0]},${markedPairs[1]}`
                 allPlacedCoords.push(idComparison)
                 
                 // for (let k = 0; k < markedPairs.length; k++) {
@@ -56,7 +56,7 @@ const domMethods = {
             for (let j = 0; j < markedCells.length; j++) {
                 const markedPairs = markedCells[j];
                 // console.log(markedPairs)
-                const idComparison = `${markedPairs[0]}, ${markedPairs[1]}`
+                const idComparison = `${markedPairs[0]},${markedPairs[1]}`
                 allPlacedCoords.push(idComparison)
                 
                 // for (let k = 0; k < markedPairs.length; k++) {
@@ -76,7 +76,27 @@ const domMethods = {
     "gridRenderWrapper": function() {
         domMethods.renderPlayerCells()
         domMethods.renderCpuCells()
-    }
+    },
+
+    // TODO: return cell id, check if ship is hit
+    "playerTurnOnClick": function() {
+        const cpuGrid = document.querySelector("#cpu-grid")
+        const uiCellArray = Array.from(cpuGrid.childNodes)
+        uiCellArray.forEach((cell) => {
+            // console.log(cell.id)
+            let idCheckedStr = cell.id
+            let checkedArr = idCheckedStr.split(",")
+            cell.onclick = function() {
+                // console.log(cell.id)
+                let xCoord = checkedArr[0]
+                let yCoord = checkedArr[1]
+                TEST_MATCH.cpu.board.recieveAttack([xCoord, yCoord])
+                console.log(TEST_MATCH.cpu.board.fleet)
+                console.log(TEST_MATCH.cpu.board.missedShots)
+            }
+            
+        })
+    },
 
         
 }

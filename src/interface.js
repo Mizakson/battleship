@@ -111,8 +111,8 @@ const uiMethods = {
 
         for (let i = 0; i < width; i++) {
             for (let j = 0; j < height; j++) {
-                playerGrid.appendChild(uiMethods.createEl("div", "cell", `${i}, ${j}`, ""))
-                cpuGrid.appendChild(uiMethods.createEl("div", "cell", `${i}, ${j}`, ""))
+                playerGrid.appendChild(uiMethods.createEl("div", "cell", `${i},${j}`, ""))
+                cpuGrid.appendChild(uiMethods.createEl("div", "cell", `${i},${j}`, ""))
             }
         }
 
