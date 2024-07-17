@@ -12,7 +12,7 @@ const domMethods = {
         const height = 10
 
         const uiCellArray = Array.from(playerGrid.childNodes)
-        console.log(uiCellArray)
+        // console.log(uiCellArray)
 
         let allPlacedCoords = []
 
@@ -36,12 +36,6 @@ const domMethods = {
                 }
             }
         }
-
-        // TODO: compare with model to check if id's match
-        // if they do, toggle class 'placed'
-
-
-
 
 
     },

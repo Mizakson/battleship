@@ -117,8 +117,7 @@ const uiMethods = {
         }
 
     },
-
-
+       
 }
     
 export default uiMethods
