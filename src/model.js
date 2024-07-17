@@ -35,7 +35,7 @@ export default class MainGame {
         c.board.place(c.board.fleet[0],[2, 2], "vertical")
         c.board.place(c.board.fleet[1],[4, 4], "horizontal")
         c.board.place(c.board.fleet[2],[5, 5], "horizontal")
-        c.board.place(c.board.fleet[3],[7, 4], "horizontal")
+        c.board.place(c.board.fleet[3],[5, 2], "vertical")
 
         // console.log([c, c.board])
     }
