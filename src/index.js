@@ -35,7 +35,7 @@ function init() {
         uiMethods.tenByTenGrids()
     }
 
-    domMethods.renderPlayerCells()
+    domMethods.gridRenderWrapper()
     
 }
 

@@ -40,6 +40,15 @@ const domMethods = {
 
     },
 
+    "renderCpuCells": function() {
+        
+    },
+
+    "gridRenderWrapper": function() {
+        domMethods.renderPlayerCells()
+        domMethods.renderCpuCells()
+    }
+
         
 }
 
