@@ -38,7 +38,7 @@ a:hover {
 }
 
 .human, .cpu {
-    border: medium dotted black;
+    /* border: medium dotted black; */
     width: 35%;
     height: 105%;
     display: flex;
