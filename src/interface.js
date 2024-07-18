@@ -125,9 +125,9 @@ const uiMethods = {
         form.innerHTML += `
         <p id='ship-1-input'>Place you first ship (length of 2 cells): </p>
             <label for='ship-1-x'>X Coord:</label>
-            <input type='number' min=0 max=9 name='ship-1-x' id='ship'></input>
+            <input type='number' min=0 max=9 name='ship-1-x' id='ship-1-x'></input>
             <label for='ship-1-y'>  Y Coord:</label>
-            <input type='number' min=0 max=9 name='ship-1-y' id='ship'></input>
+            <input type='number' min=0 max=9 name='ship-1-y' id='ship-1-y'></input>
             <label for='ship-1-direction'>  Direction:</label>
             <select name='ship-1-direction' id='ship-1-direction'>
                 <option value='horizontal'>Horizontal</option>
@@ -143,9 +143,9 @@ const uiMethods = {
         form.innerHTML += `
         <p id='ship-2-input'>Place you first ship (length of 2 cells): </p>
             <label for='ship-2-x'>X Coord:</label>
-            <input type='number' min=0 max=9 name='ship-2-x' id='ship'></input>
+            <input type='number' min=0 max=9 name='ship-2-x' id='ship-2-x'></input>
             <label for='ship-2-y'>  Y Coord:</label>
-            <input type='number' min=0 max=9 name='ship-2-y' id='ship'></input>
+            <input type='number' min=0 max=9 name='ship-2-y' id='ship-2-y'></input>
             <label for='ship-2-direction'>  Direction:</label>
             <select name='ship-2-direction' id='ship-2-direction'>
                 <option value='horizontal'>Horizontal</option>
@@ -161,9 +161,9 @@ const uiMethods = {
         form.innerHTML += `
         <p id='ship-3-input'>Place you first ship (length of 3 cells): </p>
             <label for='ship-3-x'>X Coord:</label>
-            <input type='number' min=0 max=9 name='ship-3-x' id='ship'></input>
+            <input type='number' min=0 max=9 name='ship-3-x' id='ship-3-x'></input>
             <label for='ship-3-y'>  Y Coord:</label>
-            <input type='number' min=0 max=9 name='ship-3-y' id='ship'></input>
+            <input type='number' min=0 max=9 name='ship-3-y' id='ship-3-y'></input>
             <label for='ship-3-direction'>  Direction:</label>
             <select name='ship-3-direction' id='ship-3-direction'>
                 <option value='horizontal'>Horizontal</option>
@@ -179,9 +179,9 @@ const uiMethods = {
         form.innerHTML += `
         <p id='ship-4-input'>Place you first ship (length of 2 cells): </p>
             <label for='ship-4-x'>X Coord:</label>
-            <input type='number' min=0 max=9 name='ship-4-x' id='ship'></input>
+            <input type='number' min=0 max=9 name='ship-4-x' id='ship-4-x'></input>
             <label for='ship-4-y'>  Y Coord:</label>
-            <input type='number' min=0 max=9 name='ship-4-y' id='ship'></input>
+            <input type='number' min=0 max=9 name='ship-4-y' id='ship-4-y'></input>
             <label for='ship-4-direction'>  Direction:</label>
             <select name='ship-4-direction' id='ship-4-direction'>
                 <option value='horizontal'>Horizontal</option>
@@ -190,6 +190,10 @@ const uiMethods = {
         <button type='submit'>Confirm Ship 4</button>
         `
         // document.querySelector(".place-ships").appendChild(form)
+    },
+
+    "clearForm": function(){
+        document.querySelector("form").innerHTML = ""
     },
        
 }
