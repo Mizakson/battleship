@@ -3,6 +3,7 @@ import Gameboard from "../src/gameboard"
 import Player from "../src/player"
 import TEST_MATCH from "../src/index"
 import MainGame from "./model"
+import uiMethods from "./interface"
 
 const domMethods = {
 
@@ -210,7 +211,89 @@ const domMethods = {
             },
 
 
-        },
+    },    
+        
+    "formSubmit": {
+
+            "getFirstShip": function(){
+                document.querySelector("form").addEventListener("submit", (e) => {
+                    e.preventDefault()
+                    e.stopImmediatePropagation()
+                    const x = document.querySelector("#ship-1-x").value
+                    const y = document.querySelector("#ship-1-y").value
+                    const direction = document.querySelector("#ship-1-direction").value
+
+                    TEST_MATCH.human.board.place(TEST_MATCH.human.board.fleet[0],[x, y], direction)
+                    const ship = [x, y, direction]
+                    console.log(ship)
+                    domMethods.renderPlayerCells()
+                    uiMethods.clearForm()
+                    uiMethods.secondShipForm()
+
+                })
+
+            },
+
+            "getSecondShip": function(){
+                document.querySelector("form").addEventListener("submit", (e) => {
+                    e.preventDefault()
+                    e.stopImmediatePropagation()
+                    const x = document.querySelector("#ship-2-x").value
+                    const y = document.querySelector("#ship-2-y").value
+                    const direction = document.querySelector("#ship-2-direction").value
+
+                    TEST_MATCH.human.board.place(TEST_MATCH.human.board.fleet[1],[x, y], direction)
+                    const ship = [x, y, direction]
+
+                    // validate coordinates, check for duplicates
+
+                    console.log(ship)
+                    domMethods.renderPlayerCells()
+                    uiMethods.clearForm()
+                    uiMethods.thirdShipForm()
+                })
+            },
+
+            "getThirdShip": function(){
+                document.querySelector("form").addEventListener("submit", (e) => {
+                    e.preventDefault()
+                    e.stopImmediatePropagation()
+                    const x = document.querySelector("#ship-3-x").value
+                    const y = document.querySelector("#ship-3-y").value
+                    const direction = document.querySelector("#ship-3-direction").value
+
+                    TEST_MATCH.human.board.place(TEST_MATCH.human.board.fleet[2],[x, y], direction)
+                    const ship = [x, y, direction]
+
+                    // validate coordinates, check for duplicates
+
+                    console.log(ship)
+                    domMethods.renderPlayerCells()
+                    uiMethods.clearForm()
+                    uiMethods.fourthShipForm()
+                })
+            },
+
+            "getFourthShip": function(){
+                document.querySelector("form").addEventListener("submit", (e) => {
+                    e.preventDefault()
+                    e.stopImmediatePropagation()
+                    const x = document.querySelector("#ship-4-x").value
+                    const y = document.querySelector("#ship-4-y").value
+                    const direction = document.querySelector("#ship-4-direction").value
+
+                    TEST_MATCH.human.board.place(TEST_MATCH.human.board.fleet[3],[x, y], direction)
+                    const ship = [x, y, direction]
+
+                    // validate coordinates, check for duplicates
+
+                    console.log(ship)
+                    domMethods.renderPlayerCells()
+                    uiMethods.clearForm()
+                    domMethods.playerTurnOnClick()
+                })
+            },
+    },
  
 }
 

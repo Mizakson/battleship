@@ -26,7 +26,7 @@ function baseDescription() {
         uiMethods.tenByTenGrids()
         document.querySelector(".reset").onclick = function() {
             setTimeout(location.reload(), 1 * 500)
-        } 
+        }
     }
 }
 baseDescription()
@@ -34,12 +34,7 @@ baseDescription()
 const TEST_MATCH = new MainGame()
 export default TEST_MATCH
 
-function init() {
-    if (baseDescription) {
-        
-        domMethods.gridRenderWrapper()
-        domMethods.onClickWrapper()
-    }
+ function init() {
 }
 
 init()

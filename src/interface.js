@@ -100,8 +100,6 @@ const uiMethods = {
 
         const cpuGrid = uiMethods.createEl("div", "grid", "cpu-grid", "")
         document.querySelector(".cpu").appendChild(cpuGrid)
-
-        this.firstShipForm()
     },
 
     "tenByTenGrids": function() {
@@ -120,9 +118,9 @@ const uiMethods = {
 
     },
 
-    "firstShipForm": function() {
+    "firstShipForm": function(callback) {
         const form = uiMethods.createEl("form", "ship-place", "ship-1-form", "")
-        form.innerHTML += `
+        form.innerHTML = `
         <p id='ship-1-input'>Place you first ship (length of 2 cells): </p>
             <label for='ship-1-x'>X Coord:</label>
             <input type='number' min=0 max=9 name='ship-1-x' id='ship-1-x'></input>
@@ -136,15 +134,24 @@ const uiMethods = {
         <button type='submit' id='ship-1-submit'>Confirm Ship 1</button>
         `
         document.querySelector(".place-ships").appendChild(form)
+
+        console.log("first ship promise")
+        // when form is created then call get form data function
+        return new Promise((resolve) => {
+            resolve(domMethods.formSubmit.getFirstShip())
+            console.log("first form submit added...")
+        })
+
     },
 
     "secondShipForm": function() {
 
         uiMethods.clearForm()
 
-        const form = uiMethods.createEl("form", "ship-place", "ship-2-form", "")
-        form.innerHTML += `
-        <p id='ship-2-input'>Place you first ship (length of 2 cells): </p>
+        document.querySelector("form").id = "ship-form-2"
+
+        document.querySelector("form").innerHTML = `
+        <p id='ship-2-input'>Place you first ship (length of 3 cells): </p>
             <label for='ship-2-x'>X Coord:</label>
             <input type='number' min=0 max=9 name='ship-2-x' id='ship-2-x'></input>
             <label for='ship-2-y'>  Y Coord:</label>
@@ -156,17 +163,22 @@ const uiMethods = {
             </select>
         <button type='submit' id='ship-2-submit'>Confirm Ship 2</button>
         `
-        document.querySelector(".place-ships").appendChild(form)
+        console.log("second ship promise")
+        // when form is created then call get form data function
+        return new Promise((resolve) => {
+            resolve(domMethods.formSubmit.getSecondShip())
+            console.log("second form submit added...")
+        })
     },
 
     "thirdShipForm": function() {
 
 
         uiMethods.clearForm()
+        document.querySelector("form").id = "ship-form-3"
         
-        const form = uiMethods.createEl("form", "ship-place", "ship-3-form", "")
-        form.innerHTML += `
-        <p id='ship-3-input'>Place you first ship (length of 3 cells): </p>
+        document.querySelector("form").innerHTML = `
+        <p id='ship-3-input'>Place you first ship (length of 4 cells): </p>
             <label for='ship-3-x'>X Coord:</label>
             <input type='number' min=0 max=9 name='ship-3-x' id='ship-3-x'></input>
             <label for='ship-3-y'>  Y Coord:</label>
@@ -178,16 +190,15 @@ const uiMethods = {
             </select>
         <button type='submit' id='ship-3-submit'>Confirm Ship 3</button>
         `
-        document.querySelector(".place-ships").appendChild(form)
     },
 
     "fourthShipForm": function() {
 
         uiMethods.clearForm()
+        document.querySelector("form").id = "ship-form-4"
 
-        const form = uiMethods.createEl("form", "ship-place", "ship-4-form", "")
-        form.innerHTML += `
-        <p id='ship-4-input'>Place you first ship (length of 2 cells): </p>
+        document.querySelector("form").innerHTML = `
+        <p id='ship-4-input'>Place you first ship (length of 5 cells): </p>
             <label for='ship-4-x'>X Coord:</label>
             <input type='number' min=0 max=9 name='ship-4-x' id='ship-4-x'></input>
             <label for='ship-4-y'>  Y Coord:</label>
@@ -199,7 +210,6 @@ const uiMethods = {
             </select>
         <button type='submit' id='ship-4-submit'>Confirm Ship 4</button>
         `
-        document.querySelector(".place-ships").appendChild(form)
     },
 
     "clearForm": function(){
