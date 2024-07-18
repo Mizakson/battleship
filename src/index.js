@@ -35,6 +35,7 @@ const TEST_MATCH = new MainGame()
 export default TEST_MATCH
 
  function init() {
+    return 0
 }
 
 init()

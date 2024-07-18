@@ -135,12 +135,6 @@ const uiMethods = {
         `
         document.querySelector(".place-ships").appendChild(form)
 
-        console.log("first ship promise")
-        // when form is created then call get form data function
-        return new Promise((resolve) => {
-            resolve(domMethods.formSubmit.getFirstShip())
-            console.log("first form submit added...")
-        })
 
     },
 
@@ -163,12 +157,7 @@ const uiMethods = {
             </select>
         <button type='submit' id='ship-2-submit'>Confirm Ship 2</button>
         `
-        console.log("second ship promise")
-        // when form is created then call get form data function
-        return new Promise((resolve) => {
-            resolve(domMethods.formSubmit.getSecondShip())
-            console.log("second form submit added...")
-        })
+
     },
 
     "thirdShipForm": function() {
