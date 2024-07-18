@@ -67,7 +67,7 @@ const domMethods = {
                 for (let k = 0; k < uiCellArray.length; k++) {
                     if (uiCellArray[k].id === idComparison) {
                         // show cpu ships in render for now
-                        uiCellArray[k].classList.toggle("placed")
+                        // uiCellArray[k].classList.toggle("placed")
                         
                     }
                 }
