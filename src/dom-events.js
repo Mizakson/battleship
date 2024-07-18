@@ -218,7 +218,6 @@ const domMethods = {
             "getFirstShip": function(){
                 document.querySelector("form").addEventListener("submit", (e) => {
                     e.preventDefault()
-                    e.stopImmediatePropagation()
                     const x = document.querySelector("#ship-1-x").value
                     const y = document.querySelector("#ship-1-y").value
                     const direction = document.querySelector("#ship-1-direction").value
@@ -227,7 +226,7 @@ const domMethods = {
                     const ship = [x, y, direction]
                     console.log(ship)
                     domMethods.renderPlayerCells()
-                    uiMethods.clearForm()
+                    document.querySelector("form").remove()
                     uiMethods.secondShipForm()
 
                 })
@@ -237,7 +236,6 @@ const domMethods = {
             "getSecondShip": function(){
                 document.querySelector("form").addEventListener("submit", (e) => {
                     e.preventDefault()
-                    e.stopImmediatePropagation()
                     const x = document.querySelector("#ship-2-x").value
                     const y = document.querySelector("#ship-2-y").value
                     const direction = document.querySelector("#ship-2-direction").value
@@ -249,7 +247,7 @@ const domMethods = {
 
                     console.log(ship)
                     domMethods.renderPlayerCells()
-                    uiMethods.clearForm()
+                    document.querySelector("form").remove()
                     uiMethods.thirdShipForm()
                 })
             },
@@ -257,7 +255,6 @@ const domMethods = {
             "getThirdShip": function(){
                 document.querySelector("form").addEventListener("submit", (e) => {
                     e.preventDefault()
-                    e.stopImmediatePropagation()
                     const x = document.querySelector("#ship-3-x").value
                     const y = document.querySelector("#ship-3-y").value
                     const direction = document.querySelector("#ship-3-direction").value
@@ -269,7 +266,7 @@ const domMethods = {
 
                     console.log(ship)
                     domMethods.renderPlayerCells()
-                    uiMethods.clearForm()
+                    document.querySelector("form").remove()
                     uiMethods.fourthShipForm()
                 })
             },
@@ -277,7 +274,6 @@ const domMethods = {
             "getFourthShip": function(){
                 document.querySelector("form").addEventListener("submit", (e) => {
                     e.preventDefault()
-                    e.stopImmediatePropagation()
                     const x = document.querySelector("#ship-4-x").value
                     const y = document.querySelector("#ship-4-y").value
                     const direction = document.querySelector("#ship-4-direction").value
@@ -289,7 +285,7 @@ const domMethods = {
 
                     console.log(ship)
                     domMethods.renderPlayerCells()
-                    uiMethods.clearForm()
+                    document.querySelector("form").remove()
                     domMethods.playerTurnOnClick()
                 })
             },

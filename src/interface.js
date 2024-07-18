@@ -118,7 +118,7 @@ const uiMethods = {
 
     },
 
-    "firstShipForm": function(callback) {
+    "firstShipForm": function() {
         const form = uiMethods.createEl("form", "ship-place", "ship-1-form", "")
         form.innerHTML = `
         <p id='ship-1-input'>Place you first ship (length of 2 cells): </p>
@@ -140,11 +140,9 @@ const uiMethods = {
 
     "secondShipForm": function() {
 
-        uiMethods.clearForm()
+        const form = uiMethods.createEl("form", "ship-place", "ship-2-form", "")
 
-        document.querySelector("form").id = "ship-form-2"
-
-        document.querySelector("form").innerHTML = `
+        form.innerHTML = `
         <p id='ship-2-input'>Place you first ship (length of 3 cells): </p>
             <label for='ship-2-x'>X Coord:</label>
             <input type='number' min=0 max=9 name='ship-2-x' id='ship-2-x'></input>
@@ -157,16 +155,15 @@ const uiMethods = {
             </select>
         <button type='submit' id='ship-2-submit'>Confirm Ship 2</button>
         `
-
+        document.querySelector(".place-ships").appendChild(form)
     },
 
     "thirdShipForm": function() {
 
 
-        uiMethods.clearForm()
-        document.querySelector("form").id = "ship-form-3"
+        const form = uiMethods.createEl("form", "ship-place", "ship-3-form", "")
         
-        document.querySelector("form").innerHTML = `
+        form.innerHTML = `
         <p id='ship-3-input'>Place you first ship (length of 4 cells): </p>
             <label for='ship-3-x'>X Coord:</label>
             <input type='number' min=0 max=9 name='ship-3-x' id='ship-3-x'></input>
@@ -179,12 +176,13 @@ const uiMethods = {
             </select>
         <button type='submit' id='ship-3-submit'>Confirm Ship 3</button>
         `
+
+        document.querySelector(".place-ships").appendChild(form)
     },
 
     "fourthShipForm": function() {
 
-        uiMethods.clearForm()
-        document.querySelector("form").id = "ship-form-4"
+        const form = uiMethods.createEl("form", "ship-place", "ship-4-form", "")
 
         document.querySelector("form").innerHTML = `
         <p id='ship-4-input'>Place you first ship (length of 5 cells): </p>
@@ -199,6 +197,8 @@ const uiMethods = {
             </select>
         <button type='submit' id='ship-4-submit'>Confirm Ship 4</button>
         `
+
+        document.querySelector(".place-ships").appendChild(form)
     },
 
     "clearForm": function(){
