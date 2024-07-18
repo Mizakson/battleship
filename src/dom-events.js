@@ -1,18 +1,16 @@
 import Ship from "../src/ship"
 import Gameboard from "../src/gameboard"
 import Player from "../src/player"
-import TEST_MATCH from "../src/index"
+import MATCH from "../src/index"
 import MainGame from "./model"
 import uiMethods from "./interface"
 
 const domMethods = {
 
-    "turnCounter": 0,
-
-    "isHumanTurn": true,
-
-    // TODO: make cells from default coords turn light blue
     "renderPlayerCells": function() {
+
+        const otherArr = []
+
         const playerGrid = document.querySelector("#player-grid")
         const width = 10
         const height = 10
@@ -20,16 +18,14 @@ const domMethods = {
         const uiCellArray = Array.from(playerGrid.childNodes)
         // console.log(uiCellArray)
 
-        let allPlacedCoords = []
-
-        for (let i = 0; i < TEST_MATCH.human.board.fleet.length; i++) {
-            let markedCells = TEST_MATCH.human.board.fleet[i].placedCoords
+        for (let i = 0; i < MATCH.human.board.fleet.length; i++) {
+            let markedCells = MATCH.human.board.fleet[i].placedCoords
             
             for (let j = 0; j < markedCells.length; j++) {
                 const markedPairs = markedCells[j];
                 // console.log(markedPairs)
                 const idComparison = `${markedPairs[0]},${markedPairs[1]}`
-                allPlacedCoords.push(idComparison)
+                otherArr.push(idComparison)
                 
                 // for (let k = 0; k < markedPairs.length; k++) {
                 //     console.log(markedPairs[k])
@@ -37,7 +33,7 @@ const domMethods = {
 
                 for (let k = 0; k < uiCellArray.length; k++) {
                     if (uiCellArray[k].id === idComparison) {
-                        uiCellArray[k].classList.add("placed")
+                        uiCellArray[k].classList.toggle("placed")
                     }
                 }
             }
@@ -55,8 +51,8 @@ const domMethods = {
 
         let allPlacedCoords = []
 
-        for (let i = 0; i < TEST_MATCH.cpu.board.fleet.length; i++) {
-            let markedCells = TEST_MATCH.cpu.board.fleet[i].placedCoords
+        for (let i = 0; i < MATCH.cpu.board.fleet.length; i++) {
+            let markedCells = MATCH.cpu.board.fleet[i].placedCoords
             
             for (let j = 0; j < markedCells.length; j++) {
                 const markedPairs = markedCells[j];
@@ -71,7 +67,8 @@ const domMethods = {
                 for (let k = 0; k < uiCellArray.length; k++) {
                     if (uiCellArray[k].id === idComparison) {
                         // show cpu ships in render for now
-                        // uiCellArray[k].classList.add("placed")
+                        uiCellArray[k].classList.toggle("placed")
+                        
                     }
                 }
             }
@@ -206,12 +203,17 @@ const domMethods = {
                     }
                 }
 
-                domMethods.isHumanTurn = true
 
             },
 
 
-    },    
+    },
+
+    "btnEvents": function(){
+        document.querySelector(".random").onclick = () => {
+            const randInt = domMethods.computer.getRandInt(0, 3)
+        }
+    },
  
 }
 

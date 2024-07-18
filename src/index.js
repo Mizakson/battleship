@@ -9,13 +9,21 @@ import "../src/css/styles.css"
 const APP_STATE = false
 const GAME_START = false
 
-const MATCH = new MainGame()
+const MATCH = new MainGame(0)
 export default MATCH
 
-function INTERFACE() {uiMethods.skeleton()
-uiMethods.boardContainers()
-uiMethods.boardTitles()
-uiMethods.gridsContainerCreation()
-uiMethods.tenByTenGrids()}
+function INTERFACE() {
+    uiMethods.skeleton()
+    uiMethods.boardContainers()
+    uiMethods.boardTitles()
+    uiMethods.gridsContainerCreation()
+    uiMethods.tenByTenGrids()
+}
+
+function SETUP() {
+    domMethods.btnEvents()
+    domMethods.gridRenderWrapper()
+}
 
 INTERFACE()
+SETUP()

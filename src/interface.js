@@ -107,8 +107,13 @@ const uiMethods = {
     },
 
     "tenByTenGrids": function() {
+
+
         const playerGrid = document.querySelector("#player-grid")
         const cpuGrid = document.querySelector("#cpu-grid")
+
+        playerGrid.innerHTML = ""
+        cpuGrid.innerHTML = ""
 
         const width = 10
         const height = 10
