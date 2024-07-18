@@ -23,6 +23,9 @@ function baseDescription() {
         uiMethods.boardContainers()
         uiMethods.boardTitles()
         uiMethods.gridsContainerCreation()
+        document.querySelector(".reset").onclick = function() {
+            setTimeout(location.reload(), 1 * 500)
+        } 
     }
 }
 baseDescription()

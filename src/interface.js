@@ -58,11 +58,11 @@ const uiMethods = {
 
     "footer": function() {
         const footer = uiMethods.createContainer("footer", "")
+        const placeShipContainer = uiMethods.createContainer("place-ships", "")
         const resetBtn = uiMethods.createEl("button", "reset", "", "Reset")
-        const gameStateMessage = uiMethods.createEl("p", "game-status", "", "Place your ships to start!")
         // confirm ship placement button here?
 
-        footer.appendChild(gameStateMessage)
+        footer.appendChild(placeShipContainer)
         footer.appendChild(resetBtn)
         
         uiMethods.body.appendChild(footer)

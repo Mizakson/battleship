@@ -79,7 +79,10 @@ const domMethods = {
 
     "gridRenderWrapper": function() {
         domMethods.renderPlayerCells()
-        domMethods.renderCpuCells()  
+        domMethods.renderCpuCells()
+        document.querySelector(".reset").onclick = function() {
+            setTimeout(location.reload(), 1 * 500)
+        } 
     },
 
     // TODO: return cell id, check if ship is hit
@@ -101,10 +104,8 @@ const domMethods = {
                 let clicked = TEST_MATCH.cpu.board.recieveAttack([xCoord, yCoord])
     
                 if (clicked) {
-                    document.querySelector(".game-status").innerText = `Player hit: ${[xCoord, yCoord]}`
                     cell.classList.add("hit")
                 } if (!clicked) {
-                     document.querySelector(".game-status").innerText = `Player miss: ${[xCoord, yCoord]}`
                     cell.classList.add("miss")
                 }
     
@@ -131,12 +132,10 @@ const domMethods = {
 
     "checkGameOver": function() {
         if (TEST_MATCH.cpu.board.allSunk()) {
-            document.querySelector(".game-status").innerText = "GAME OVER..."
             setTimeout(alert("You win! :)"), 1 * 500)
             setTimeout(location.reload(), 1 * 500)
         }
         if (TEST_MATCH.human.board.allSunk()) {
-            document.querySelector(".game-status").innerText = "GAME OVER..."
             setTimeout(alert("You lose! :("), 1 * 500)
             setTimeout(location.reload(), 1 * 500)
         }
@@ -144,10 +143,7 @@ const domMethods = {
 
     "onClickWrapper": function() {
         domMethods.playerTurnOnClick()
-        domMethods.gridRenderWrapper()
-        document.querySelector(".reset").onclick = function() {
-            setTimeout(location.reload(), 1 * 500)
-        }  
+        domMethods.gridRenderWrapper()  
     },
 
     "getAllHumanCoords": function() {
@@ -203,12 +199,10 @@ const domMethods = {
                     for (let j = 0; j < humanPlacedCoords.length; j++) {
                         if (TEST_MATCH.human.board.recieveAttack(coord)) {
                             cell.classList.add("hit")
-                            document.querySelector(".game-status").innerText = `CPU hit: ${coord}`
                             return [true, coord]
                         }
                         else {
                             cell.classList.add("miss")
-                            document.querySelector(".game-status").innerText = `CPU miss: ${coord}`
                             return [false, TEST_MATCH.human.board.missedShots]
                         }
                     }
