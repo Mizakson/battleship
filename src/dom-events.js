@@ -96,7 +96,7 @@ const domMethods = {
                 // console.log(cell.id)
                 let xCoord = checkedArr[0]
                 let yCoord = checkedArr[1]
-                let clicked = TEST_MATCH.cpu.board.recieveAttack([xCoord, yCoord])
+                let clicked = MATCH.cpu.board.recieveAttack([xCoord, yCoord])
     
                 if (clicked) {
                     cell.classList.add("hit")
@@ -106,9 +106,9 @@ const domMethods = {
     
                 
                 // ship tests
-                // console.log(TEST_MATCH.cpu.board.fleet)
-                // console.log(TEST_MATCH.cpu.board.missedShots)
-                // console.log(TEST_MATCH.cpu.board.allSunk())
+                // console.log(MATCH.cpu.board.fleet)
+                // console.log(MATCH.cpu.board.missedShots)
+                // console.log(MATCH.cpu.board.allSunk())
                 domMethods.checkGameOver()
                 
                 // turn mechanism
@@ -126,11 +126,11 @@ const domMethods = {
     },
 
     "checkGameOver": function() {
-        if (TEST_MATCH.cpu.board.allSunk()) {
+        if (MATCH.cpu.board.allSunk()) {
             setTimeout(alert("You win! :)"), 1 * 500)
             setTimeout(location.reload(), 1 * 500)
         }
-        if (TEST_MATCH.human.board.allSunk()) {
+        if (MATCH.human.board.allSunk()) {
             setTimeout(alert("You lose! :("), 1 * 500)
             setTimeout(location.reload(), 1 * 500)
         }
@@ -144,8 +144,8 @@ const domMethods = {
     "getAllHumanCoords": function() {
         let arr = []
 
-        for (let i = 0; i < TEST_MATCH.human.board.fleet.length; i++) {
-            let markedCells = TEST_MATCH.cpu.board.fleet[i].placedCoords
+        for (let i = 0; i < MATCH.human.board.fleet.length; i++) {
+            let markedCells = MATCH.cpu.board.fleet[i].placedCoords
             
             for (let j = 0; j < markedCells.length; j++) {
                 const markedPairs = markedCells[j];
@@ -178,7 +178,7 @@ const domMethods = {
             "renderCpuAttack": function(coord = this.guess()) {
 
                 // prevent duplicates
-                if (TEST_MATCH.human.board.missedShots.includes(coord)) {
+                if (MATCH.human.board.missedShots.includes(coord)) {
                     this.renderCpuAttack()
                 }
 
@@ -192,13 +192,13 @@ const domMethods = {
                 for (let i = 0; i < playerGrid.length; i++) {
                     let cell = document.getElementById(sameId)
                     for (let j = 0; j < humanPlacedCoords.length; j++) {
-                        if (TEST_MATCH.human.board.recieveAttack(coord)) {
+                        if (MATCH.human.board.recieveAttack(coord)) {
                             cell.classList.add("hit")
                             return [true, coord]
                         }
                         else {
                             cell.classList.add("miss")
-                            return [false, TEST_MATCH.human.board.missedShots]
+                            return [false, MATCH.human.board.missedShots]
                         }
                     }
                 }
@@ -211,7 +211,10 @@ const domMethods = {
 
     "btnEvents": function(){
         document.querySelector(".random").onclick = () => {
-            const randInt = domMethods.computer.getRandInt(0, 3)
+            location.reload()
+        }
+        document.querySelector(".confirm").onclick = () => {
+            domMethods.playerTurnOnClick()
         }
     },
  

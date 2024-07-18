@@ -6,7 +6,7 @@ import uiMethods from "../src/interface"
 
 // human player vs cpu
 export default class MainGame {
-    constructor(hCoords = 2) {
+    constructor(hCoords) {
         this.hCoords = hCoords
         this.cCoords = hCoords
         this.hasWinner = false

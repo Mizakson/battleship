@@ -9,7 +9,9 @@ import "../src/css/styles.css"
 const APP_STATE = false
 const GAME_START = false
 
-const MATCH = new MainGame(0)
+const randInt = domMethods.computer.getRandInt(0, 3)
+
+let MATCH = new MainGame(randInt)
 export default MATCH
 
 function INTERFACE() {
