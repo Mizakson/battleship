@@ -133,12 +133,15 @@ const uiMethods = {
                 <option value='horizontal'>Horizontal</option>
                 <option value='vertical'>Vertical</option>
             </select>
-        <button type='submit'>Confirm Ship 1</button>
+        <button type='submit' id='ship-1-submit'>Confirm Ship 1</button>
         `
         document.querySelector(".place-ships").appendChild(form)
     },
 
     "secondShipForm": function() {
+
+        uiMethods.clearForm()
+
         const form = uiMethods.createEl("form", "ship-place", "ship-2-form", "")
         form.innerHTML += `
         <p id='ship-2-input'>Place you first ship (length of 2 cells): </p>
@@ -151,12 +154,16 @@ const uiMethods = {
                 <option value='horizontal'>Horizontal</option>
                 <option value='vertical'>Vertical</option>
             </select>
-        <button type='submit'>Confirm Ship 2</button>
+        <button type='submit' id='ship-2-submit'>Confirm Ship 2</button>
         `
-        // document.querySelector(".place-ships").appendChild(form)
+        document.querySelector(".place-ships").appendChild(form)
     },
 
     "thirdShipForm": function() {
+
+
+        uiMethods.clearForm()
+        
         const form = uiMethods.createEl("form", "ship-place", "ship-3-form", "")
         form.innerHTML += `
         <p id='ship-3-input'>Place you first ship (length of 3 cells): </p>
@@ -169,12 +176,15 @@ const uiMethods = {
                 <option value='horizontal'>Horizontal</option>
                 <option value='vertical'>Vertical</option>
             </select>
-        <button type='submit'>Confirm Ship 3</button>
+        <button type='submit' id='ship-3-submit'>Confirm Ship 3</button>
         `
-        // document.querySelector(".place-ships").appendChild(form)
+        document.querySelector(".place-ships").appendChild(form)
     },
 
     "fourthShipForm": function() {
+
+        uiMethods.clearForm()
+
         const form = uiMethods.createEl("form", "ship-place", "ship-4-form", "")
         form.innerHTML += `
         <p id='ship-4-input'>Place you first ship (length of 2 cells): </p>
@@ -187,9 +197,9 @@ const uiMethods = {
                 <option value='horizontal'>Horizontal</option>
                 <option value='vertical'>Vertical</option>
             </select>
-        <button type='submit'>Confirm Ship 4</button>
+        <button type='submit' id='ship-4-submit'>Confirm Ship 4</button>
         `
-        // document.querySelector(".place-ships").appendChild(form)
+        document.querySelector(".place-ships").appendChild(form)
     },
 
     "clearForm": function(){

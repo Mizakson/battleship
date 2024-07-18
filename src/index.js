@@ -23,6 +23,7 @@ function baseDescription() {
         uiMethods.boardContainers()
         uiMethods.boardTitles()
         uiMethods.gridsContainerCreation()
+        uiMethods.tenByTenGrids()
         document.querySelector(".reset").onclick = function() {
             setTimeout(location.reload(), 1 * 500)
         } 
@@ -35,7 +36,7 @@ export default TEST_MATCH
 
 function init() {
     if (baseDescription) {
-        uiMethods.tenByTenGrids()
+        
         domMethods.gridRenderWrapper()
         domMethods.onClickWrapper()
     }
