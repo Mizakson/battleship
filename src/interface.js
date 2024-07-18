@@ -59,8 +59,12 @@ const uiMethods = {
     "footer": function() {
         const footer = uiMethods.createContainer("footer", "")
         const placeShipContainer = uiMethods.createContainer("place-ships", "")
+        const randomBtn = uiMethods.createEl("button", "random", "", "Randomly Place Ships")
+        const confirmBtn = uiMethods.createEl("button", "confirm", "", "Confirm")
         const resetBtn = uiMethods.createEl("button", "reset", "", "Reset")
-        // confirm ship placement button here?
+
+        placeShipContainer.appendChild(randomBtn)
+        placeShipContainer.appendChild(confirmBtn)
 
         footer.appendChild(placeShipContainer)
         footer.appendChild(resetBtn)
