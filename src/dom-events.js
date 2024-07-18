@@ -80,9 +80,6 @@ const domMethods = {
     "gridRenderWrapper": function() {
         domMethods.renderPlayerCells()
         domMethods.renderCpuCells()
-        document.querySelector(".reset").onclick = function() {
-            setTimeout(location.reload(), 1 * 500)
-        } 
     },
 
     // TODO: return cell id, check if ship is hit

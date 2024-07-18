@@ -53,7 +53,7 @@ a:hover {
     height: 75%;
 }
 
-button {
+button, select, option {
     font-family: inherit;
 }
 
