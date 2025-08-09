@@ -16,20 +16,17 @@ const domMethods = {
         const height = 10
 
         const uiCellArray = Array.from(playerGrid.childNodes)
-        // console.log(uiCellArray)
+        
 
         for (let i = 0; i < MATCH.human.board.fleet.length; i++) {
             let markedCells = MATCH.human.board.fleet[i].placedCoords
             
             for (let j = 0; j < markedCells.length; j++) {
                 const markedPairs = markedCells[j];
-                // console.log(markedPairs)
+               
                 const idComparison = `${markedPairs[0]},${markedPairs[1]}`
                 otherArr.push(idComparison)
                 
-                // for (let k = 0; k < markedPairs.length; k++) {
-                //     console.log(markedPairs[k])
-                // }
 
                 for (let k = 0; k < uiCellArray.length; k++) {
                     if (uiCellArray[k].id === idComparison) {
