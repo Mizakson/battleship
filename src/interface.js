@@ -97,7 +97,7 @@ const uiMethods = {
         document.querySelector(".cpu").appendChild(cpuTitle)
     },
 
-    // TODO: create empty grids
+    
     "gridsContainerCreation": function() {
         const playerGrid = uiMethods.createEl("div", "grid", "player-grid", "")
         document.querySelector(".human").appendChild(playerGrid)
