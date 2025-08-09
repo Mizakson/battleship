@@ -37,7 +37,8 @@ a:hover {
     padding-bottom: 3%;
 }
 
-.human, .cpu {
+.human,
+.cpu {
     /* border: medium dotted black; */
     width: 35%;
     height: 105%;
@@ -47,13 +48,16 @@ a:hover {
     align-items: center;
 }
 
-#player-grid, #cpu-grid {
+#player-grid,
+#cpu-grid {
     /* border: medium solid black; */
     width: 75%;
     height: 75%;
 }
 
-button, select, option {
+button,
+select,
+option {
     font-family: inherit;
 }
 
@@ -83,9 +87,10 @@ form {
     height: 75%;
 }
 
-/* .cell:hover {
-    background-color: lightblue;
-} */
+.cell:hover {
+    transform: scale(1.2);
+    transition: ease-in-out;
+}
 
 .placed {
     background-color: blue
