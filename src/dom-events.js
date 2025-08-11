@@ -203,6 +203,9 @@ const domMethods = {
         document.querySelector(".confirm").onclick = () => {
             domMethods.playerTurnOnClick()
         }
+        document.querySelector(".reset").onclick = () => {
+            window.location.reload()
+        }
     },
  
 }
