@@ -69,8 +69,20 @@ To run the test suite and verify the code's functionality, run the following com
  npm test
 ```
 ## What I Learned
+* __Testing with Jest__: Gained extensive experience in writing unit and integration tests to ensure source code reliability and catch bugs early in the development process.
+
+* __Object-Oriented JavaScript__: Learned how to effectively use factory functions and ES6 modules to create a modular and scalable application structure.
+
+* __MVC Design Pattern__: Understood how to apply the Model-View-Controller pattern to separate concerns and create a more organized and maintainable application.
+
+* __Helper Functions and Factories__: Reinforced the importance of using helper functions and factory functions for creating reusable and modular components.
 
 ## Future Enhancements
+* __Improved Ship Configuration__: Refine the logic for ship placement, potentially allowing users to manually place their ships.
+
+* __Smarter CPU AI__: Enhance the CPU's ship-targeting logic to create a more challenging and dynamic opponent.
+
+* __Session Persistence__: Add functionality to save game state, allowing users to continue a game where they left off.
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
