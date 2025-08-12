@@ -30,7 +30,7 @@ Key:
   * __Red Square__: Marks a missed shot.
 
 ## Features
-* __Play against the CPU__: Take on a challenging computer opponent in a game of Battleship.
+* __Play against the CPU__: Play against the computer in a game of Battleship.
 
 * __Preset Ship Configurations__: Choose from a selection of pre-configured ship placements to get into the game quickly.
 
