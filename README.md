@@ -48,8 +48,26 @@ Key:
 
 ## Setup and Installation
 
-## Testing
+To get a copy of this project up and running on your local machine, follow these steps:
 
+1. __Clone the repository__:
+``` bash
+ git clone https://github.com/Mizakson/battleship.git
+ cd battleship
+```
+2. __Install Dependencies__:
+``` bash
+ npm install
+```
+3. __Run the application locally__:
+``` bash
+ npm start
+```
+## Testing
+To run the test suite and verify the code's functionality, run the following command:
+``` bash
+ npm test
+```
 ## What I Learned
 
 ## Future Enhancements
