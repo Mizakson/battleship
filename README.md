@@ -39,9 +39,9 @@ Key:
 ## Tech Stack
 * __Vanilla JavaScript__: The core game logic and user interface are built entirely with vanilla JavaScript, emphasizing clean and modular code.
 
-* __Jest__: A powerful JavaScript testing library used to ensure the reliability and correctness of all game functions through unit and integration tests.
+* __Jest__: JavaScript testing library used to ensure the reliability all game functions through unit and integration tests.
 
-* __Webpack & Babel__: These are used for module bundling and transpiling to ensure the code works seamlessly across all modern browsers.
+* __Webpack & Babel__: Used for module bundling and transpiling to ensure the code works seamlessly across all modern browsers.
 
 * __style-loader__: A Webpack loader that helps properly load and inject CSS files into the DOM after the application is built.
 
