@@ -30,10 +30,21 @@ Key:
   * __Red Square__: Marks a missed shot.
 
 ## Features
+* __Play against the CPU__: Take on a challenging computer opponent in a game of Battleship.
 
+* __Preset Ship Configurations__: Choose from a selection of pre-configured ship placements to get into the game quickly.
 
+* __Game Reset__: Start a new game at any time with a single click.
 
 ## Tech Stack
+* __Vanilla JavaScript__: The core game logic and user interface are built entirely with vanilla JavaScript, emphasizing clean and modular code.
+
+* __Jest__: A powerful JavaScript testing library used to ensure the reliability and correctness of all game functions through unit and integration tests.
+
+* __Webpack & Babel__: These are used for module bundling and transpiling to ensure the code works seamlessly across all modern browsers.
+
+* __style-loader__: A Webpack loader that helps properly load and inject CSS files into the DOM after the application is built.
+
 
 ## Setup and Installation
 
