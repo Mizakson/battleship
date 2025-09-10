@@ -37,11 +37,11 @@ Key:
 * __Game Reset__: Start a new game at any time with a single click.
 
 ## Tech Stack
-* __Vanilla JavaScript__: The core game logic and user interface are built entirely with vanilla JavaScript, emphasizing clean and modular code.
+* __Vanilla JavaScript__: The core game logic and user interface are built entirely with vanilla JavaScript.
 
 * __Jest__: JavaScript testing library used to ensure the reliability all game functions through unit and integration tests.
 
-* __Webpack & Babel__: Used for module bundling and transpiling to ensure the code works seamlessly across all modern browsers.
+* __Webpack & Babel__: Used for module bundling and transpiling of code.
 
 * __style-loader__: A Webpack loader that helps properly load and inject CSS files into the DOM after the application is built.
 
@@ -69,7 +69,7 @@ To run the test suite and verify the code's functionality, run the following com
  npm test
 ```
 ## What I Learned
-* __Testing with Jest__: Gained extensive experience in writing unit and integration tests to ensure source code reliability and catch bugs early in the development process.
+* __Testing with Jest__: Gained extensive experience in writing unit and integration tests to ensure source code reliability.
 
 * __Object-Oriented JavaScript__: Learned how to effectively use factory functions and ES6 modules to create a modular and scalable application structure.
 
